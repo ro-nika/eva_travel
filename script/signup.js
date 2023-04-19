@@ -24,7 +24,7 @@ async function signUp(email, password) {
 
         const res = await response.json()
         if (response.ok) {
-            window.open('../profile.html')
+            window.open('./profile.html')
         } else {
             throw new Error(res.error.errors.at(0).message)
         }
