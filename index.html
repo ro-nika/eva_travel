@@ -11,81 +11,92 @@
 </head>
 
 <body>
-    <div class="content_top">
-        <nav class="nav_bar">
-            <a class="btn_logo"><img src="./img/logo.png" alt=""></a>
+    <div class="header">
+        <video autoplay loop muted src="video/video-on-top.mp4" class="video"></video>
+        <div class="main_content">
 
-            <ul class="nav_list">
-                <li>Hotels</li>
-                <li>Cities</li>
-                <li>Flights</li>
-                <li>Community</li>
-            </ul>
-        </nav>
-        <div class="main_block">
-            <div class="main_top_block">
-                <div class="top_left">
+            <div class="content_top">
+                <nav class="nav_bar">
+                    <a class="btn_logo"><img src="./img/logo.png" alt=""></a>
 
-                    <div class="main_words">
-                        <img src="./img/planet.png" alt="">
-                        <h1>Travel with "EVA Travel"</h1>
-                    </div>
-                    <h3>Join a global community of remote workers <br>
-                        living and traveling around the world
-                    </h3>
-                    <div class="picks_in_top_left">
-                        <img src="./img/pick-in_top1.jpg" alt="">
-                        <img src="./img/pick-in_top2.jpg" alt="">
-                        <img src="./img/pick-in_top3.jpg" alt="">
-                        <img src="./img/pick-in_top4.jpg" alt="">
-                        <img src="./img/pick-in_top5.jpg" alt="">
-                        <img src="./img/pick-in_top6.jpg" alt="">
-                        <img src="./img/pick-in_top7.jpg" alt="">
-                        <img src="./img/pick-in_top8.jpg" alt="">
-                        <img src="./img/pick-in_top9.jpg" alt="">
-                        <img src="./img/pick-in_top10.jpg" alt="">
-                        <img src="./img/pick-in_top11.jpg" alt="">
+                    <ul class="nav_list">
+                        <li>Hotels</li>
+                        <li>Cities</li>
+                        <li>Flights</li>
+                        <li>Community</li>
+                    </ul>
+                </nav>
+                <div class="main_block">
+                    <div class="main_top_block">
+                        <div class="top_left">
 
-                    </div>
-                </div>
+                            <div class="main_words">
+                                <img src="./img/planet.png" alt="">
+                                <h1>Travel with "EVA Travel"</h1>
+                            </div>
+                            <h3>Join a global community of remote workers <br>
+                                living and traveling around the world
+                            </h3>
+                            <div class="picks_in_top_left">
+                                <img src="./img/pick-in_top1.jpg" alt="">
+                                <img src="./img/pick-in_top2.jpg" alt="">
+                                <img src="./img/pick-in_top3.jpg" alt="">
+                                <img src="./img/pick-in_top4.jpg" alt="">
+                                <img src="./img/pick-in_top5.jpg" alt="">
+                                <img src="./img/pick-in_top6.jpg" alt="">
+                                <img src="./img/pick-in_top7.jpg" alt="">
+                                <img src="./img/pick-in_top8.jpg" alt="">
+                                <img src="./img/pick-in_top9.jpg" alt="">
+                                <img src="./img/pick-in_top10.jpg" alt="">
+                                <img src="./img/pick-in_top11.jpg" alt="">
 
-                <div class="top_right">
-                    <div class="container">
-                        <div class="form">
-                            <img src="./img/registr_photo.png" alt="">
-                            <h1>Join us</h1>
+                            </div>
+                        </div>
 
-                            <label for="email">Email</label>
-                            <input type="email" id="email" class="signup_email_input">
+                        <div class="top_right">
+                            <div class="container">
+                                <div class="form">
+                                    <img src="./img/registr_photo.png" alt="">
+                                    <h1>Join us</h1>
 
-                            <p>Is there an account? <a href="signin.html">Sign in</a></p>
-                            <button class="signup_btn">Sign Up</button>
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" class="signup_email_input" >
+
+                                    <label for="password">Password</label>
+                                    <input type="password" id="password" class="signup_password_input">
+
+                                    <p>Is there an account? <a href="signin.html">Sign in</a></p>
+                                    <button class="signup_btn">Sign Up</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="main_down_block">
+                <svg viewBox="0 0 1440 120" class="wave">
+                    <path
+                        d="M1440,21.2101911 L1440,120 L0,120 L0,21.2101911 C120,35.0700637 240,42 360,42 C480,42 600,35.0700637 720,21.2101911 C808.32779,12.416393 874.573633,6.87702029 918.737528,4.59207306 C972.491685,1.8109458 1026.24584,0.420382166 1080,0.420382166 C1200,0.420382166 1320,7.35031847 1440,21.2101911 Z">
+                    </path>
+                </svg>
+            </div>
+            <div class="under_wave">
+
+                <div class="categoryFilterContainer">
+                    <select class="categoryFilterSelect">
+                        <option value="">Выберите фильтрацию</option>
+                    </select>
+
+                    <input type="text" id="searchInput" placeholder="Search...">
+                    <button id="searchBtn">Search</button>
+                </div>
+            </div>
+
         </div>
     </div>
-    <div class="main_down_block">
-        <svg viewBox="0 0 1440 120" class="wave">
-            <path
-                d="M1440,21.2101911 L1440,120 L0,120 L0,21.2101911 C120,35.0700637 240,42 360,42 C480,42 600,35.0700637 720,21.2101911 C808.32779,12.416393 874.573633,6.87702029 918.737528,4.59207306 C972.491685,1.8109458 1026.24584,0.420382166 1080,0.420382166 C1200,0.420382166 1320,7.35031847 1440,21.2101911 Z.,#262626">
-            </path>
-        </svg>
-    </div>
-    <div class="under_wave">
 
-        <div class="categoryFilterContainer">
-            <select class="categoryFilterSelect">
-                <option value="">Выберите фильтрацию</option>
-            </select>
-
-            <input type="text" id="searchInput" placeholder="Search...">
-            <button id="searchBtn">Search</button>
-        </div>
-    </div>
-    </div>
-
+    <script src="./script/index.js"></script>
+    <script src="./script/signup.js"></script>
 </body>
 
 </html>

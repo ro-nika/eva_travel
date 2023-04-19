@@ -11,6 +11,22 @@ body {
 
 }
 
+.header {
+    position: relative;
+    overflow: hidden;
+}
+
+.video {
+    min-height: 100vh;
+    width: 100%;
+    z-index: -99;
+    position: absolute;
+}
+
+.main_content {
+    height: 100vh;
+}
+
 ul {
     text-decoration: none;
     margin: 0;
@@ -31,11 +47,6 @@ a {
     height: 80vh;
 }
 
-
-.content_top {
-    background: url('/img/modal_phot.png') center/cover;
-
-}
 
 .nav_bar {
     width: 100%;
@@ -134,7 +145,7 @@ a {
     border-radius: 16px;
     position: relative;
     left: 150px;
-    top: 40px;
+    top: 20px;
 }
 
 .form {
@@ -231,8 +242,6 @@ button:hover {
     width: 100%;
     background: none;
 }
-
-.main_down_block svg {}
 
 .wave {
     background-color: none;
