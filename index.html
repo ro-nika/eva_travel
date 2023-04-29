@@ -17,21 +17,14 @@
 
             <div class="content_top">
                 <nav class="nav_bar">
-                    <a class="btn_logo"><img src="./img/logo.png" alt=""></a>
 
-                    <ul class="nav_list">
-                        <li>Hotels</li>
-                        <li>Cities</li>
-                        <li>Flights</li>
-                        <li>Community</li>
-                    </ul>
                 </nav>
                 <div class="main_block">
                     <div class="main_top_block">
                         <div class="top_left">
 
                             <div class="main_words">
-                                <img src="./img/planet.png" alt="">
+                                <img src="./img/logo.png" alt="">
                                 <h1>Travel with "EVA Travel"</h1>
                             </div>
                             <h3>Join a global community of remote workers <br>
@@ -54,19 +47,37 @@
                         </div>
 
                         <div class="top_right">
+                            <div class="auth">
+                                <img id='comm' src="./img/comments.png" alt="">
+                                <h2>Me</h2>
+                                <img id='pers' src="./img/profile.png" alt="">
+
+                                <div class="line"></div>
+                            </div>
+                            <div class="person">
+
+                                <ul>
+                                    <li> <a href="№">Мой профиль</a> </li>
+                                    <li> <a href="№">Билеты</a> </li>
+                                    <li> <a href="№">Отели</a> </li>
+                                    <li> <a href="№">Настройки</a> </li>
+                                </ul>
+                                <button class="btn">Закрыть</button>
+                            </div>
                             <div class="container">
                                 <div class="form">
                                     <img src="./img/registr_photo.png" alt="">
-                                    <h1>Join us</h1>
+                                    <h1>Авторизация</h1>
 
                                     <label for="email">Email</label>
-                                    <input type="email" id="email" class="signup_email_input">
+                                    <input type="email" id="email" class="signin_email_input">
 
                                     <label for="password">Password</label>
-                                    <input type="password" id="password" class="signup_password_input">
+                                    <input type="password" id="password" class="signin_password_input">
 
-                                    <p>Is there an account? <a href="signin.html">Sign in</a></p>
-                                    <button class="signup_btn">Sign Up</button>
+
+                                    <p>Нет аккаунта? <a href="signup.html">Зарегестрироваться</a></p>
+                                    <button class="signin_btn">Sign In</button>
                                 </div>
                             </div>
                         </div>
@@ -74,31 +85,32 @@
                 </div>
             </div>
             <div class="main_down_block">
-                <svg viewBox="0 0 1440 120" class="wave">
-                    <path
-                        d="M1440,21.2101911 L1440,120 L0,120 L0,21.2101911 C120,35.0700637 240,42 360,42 C480,42 600,35.0700637 720,21.2101911 C808.32779,12.416393 874.573633,6.87702029 918.737528,4.59207306 C972.491685,1.8109458 1026.24584,0.420382166 1080,0.420382166 C1200,0.420382166 1320,7.35031847 1440,21.2101911 Z">
-                    </path>
-                </svg>
-            </div>
-            <div class="under_wave">
 
-                <div class="categoryFilterContainer">
-                    <select class="categoryFilterSelect">
-                        <option value="">Выберите фильтрацию</option>
-                    </select>
+                <div class="under_wave">
 
-                    <input type="text" id="searchInput" placeholder="Search...">
-                    <button id="searchBtn">Search</button>
+
+                    <input type="text" id="searchInput" placeholder="Поиск...">
+                    <button type="button" id="searchBtn">Найти</button>
+
                 </div>
 
             </div>
 
         </div>
         <div class="cardsContainer"></div>
+        <div class="pagination">
+            <button class="button2">Prev</button>
+            <button class="button">Next</button>
+        </div>
+
+        <div class="ifAuthTrue"></div>
+
+
     </div>
 
     <script src="./script/index.js"></script>
-    <script src="./script/signup.js"></script>
+    <script src="./script/signin.js"></script>
 </body>
+
 
 </html>

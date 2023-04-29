@@ -17,7 +17,7 @@ body {
 }
 
 .video {
-    min-height: 100vh;
+    min-height: 70vh;
     width: 100%;
     z-index: -99;
     position: absolute;
@@ -98,6 +98,7 @@ a {
 
 .main_top_block {
     width: 100%;
+    height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -241,7 +242,8 @@ button:hover {
 
 .main_down_block {
     width: 100%;
-    background: none;
+    height: 300px;
+    background-color: #303234;
 }
 
 .wave {
@@ -250,17 +252,6 @@ button:hover {
     bottom: 50px;
     color: #262626;
 
-
-}
-
-.under_wave {
-    width: 100%;
-    height: 80px;
-    background-color: black;
-    margin: 0;
-    position: relative;
-    bottom: 60px;
-    color: white;
 
 }
 
@@ -343,4 +334,86 @@ button:hover {
     border-radius: 15px;
     box-shadow: 0px 0px 70px rgba(0, 0, 0, 0.3);
 
+}
+
+.pagination{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.pagination button{
+    width: 50px;
+    margin: 10px;
+
+}
+
+.auth{
+    width: 100%;
+    padding: 20px;
+    display: none;
+    position: absolute;
+    left: 1230px;
+    bottom: 1080px;
+
+}
+
+.auth img{
+    width: 60px;
+    object-fit: contain;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+#comm{
+    width: 30px;
+    position: relative;
+    top: 20px;
+    right: 50px;
+}
+
+.auth h2{
+    margin: 30px 0px 0 20px;
+}
+
+.line{
+    width: 100px;
+    height: 2px;
+    background: #000000;
+    position: relative;
+    right: 90px;
+    top: 80px;
+}
+
+.person {
+    width: 30%;
+    height: 200px;
+    border: 1px solid #000000;
+    background-color: #0000004a;
+    display: none;
+    border-radius: 12px;
+    position: relative;
+    left: 450px;
+    bottom: 70px;
+}
+
+.person ul{
+    display: flex;
+    margin: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+
+.person ul li a{
+    width: 100%;
+    color : rgb(1, 1, 1);
+    border: 1px solid rgb(0, 0, 0);
+    padding: 2px 5px;
+    border-radius: 12px;
+}
+
+.person ul li{
+    margin: 8px 0;
 }
