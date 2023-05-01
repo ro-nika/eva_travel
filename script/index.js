@@ -54,9 +54,9 @@ function cardTemplate(travelCards) {
 
     return `
   <div class="countryCards" onClick="openInfoPage()" style="background: url(${img1})center/cover ">
-      <h2>${country}</h2>
+      <h2 class="countryName">${country}</h2>
 
-      <h3>${city}</h1>
+      <h3 class="countryName">${city}</h1>
   </div>
   `
 }
@@ -72,7 +72,7 @@ window.addEventListener('DOMContentLoaded', () => {
     let off = getOffset()
 
     if (pag === null || off === null) {
-        pag = 2
+        pag = 8
         off = 0
         setOffset(off)
         setPag(pag)
@@ -85,7 +85,7 @@ window.addEventListener('DOMContentLoaded', () => {
         $button2.disabled = true
     }
 
-    if (pag == 6) {
+    if (pag == 40) {
         $button.style.cursor = 'default'
         $button.style.background = 'grey'
         $button.disabled = true
@@ -100,12 +100,12 @@ function next() {
     let pag = +getPag()
     let off = +getOffset()
 
-    if (pag >= 6 || pag <= 0) {
-        pag = 2
+    if (pag >= 40 || pag <= 0) {
+        pag = 8
         off = 0
     } else {
-        pag += 2
-        off += 2
+        pag += 8
+        off += 8
     }
 
     console.log(off);
@@ -121,11 +121,11 @@ function prev() {
     let off = +getOffset()
 
     if (off <= 0 || pag <= 0) {
-        pag = 2
+        pag = 8
         off = 0
     } else {
-        pag -= 2
-        off -= 2
+        pag -= 8
+        off -= 8
 
     }
 
@@ -161,13 +161,13 @@ function reloadPage() {
     window.location.reload()
 }
 
-// -----------------------------------------
+// --------------------------------------------------------------------
 
 function search() {
    
     let searchValue = document.getElementById("searchInput").value.toLowerCase();
   
-    let elements = document.getElementsByTagName("*");
+    let elements = document.getElementsByClassName(".countryCards");
   
     for (let i = 0; i < elements.length; i++) {
       let elementText = elements[i].textContent.toLowerCase();
@@ -175,6 +175,7 @@ function search() {
         elements[i].style.display = "none";
       } else {
         elements[i].style.display = "";
+        
       }
     }
   }
@@ -184,4 +185,3 @@ function search() {
   searchBtn.onclick = function() {
     search();
   }
-  
