@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: url(/media/background_tickets.jpg) center/cover;
+}
+
+.searchBlock {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  background: #04c1fa;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  height: 50px;
+  margin: 0 2px;
+  border-radius: 5px;
+  border: none;
+  width: 270px;
+  font-size: 20px;
+}
+
+input::placeholder {
+  color: black;
+}
+
+button {
+  height: 50px;
+  margin: 0 2px;
+  width: 150px;
+  background: #068d24;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 20px;
+}
+
+.generalTicketsBlock {
+  background: rgba(255, 255, 255, 0.9);
+  width: 80%;
+  height: 250px;
+  margin: 20px auto;
+  display: flex;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.2);
+}
+
+.leftTicketsBlock {
+  width: 25%;
+  text-align: center;
+  border-right: 1px solid rgb(194, 190, 190);
+}
+
+.rightTicketsBlock {
+  width: 75%;
+}
+
+.thereBlock {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.departureBlock {
+  width: 25%;
+  text-align: center;
+}
+
+.centerBlock {
+  width: 50%;
+}
+
+.arrivalBlock {
+  width: 25%;
+  text-align: center;
+}
+
+.centerUp {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.airplanePng {
+  width: 30px;
+}
+
+.flyLine {
+  width: 100%;
+  height: 3px;
+  background-color: rgb(9, 178, 235);
+  border-radius: 1.5px;
+}
+
+.timeFly {
+  display: flex;
+  justify-content: space-between;
+}
+
+.returnBlock {
+  width: 100%;
+  height: 100%;
+}
+
+
+/* .cardsContainer {
+  width: 100%;
+  padding: 50px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+}
+
+.countryCards {
+  padding: 20px;
+  height: 300px;
+  width: 100%;
+  border: 1px solid silver;
+  border-radius: 15px;
+  box-shadow: 0px 0px 70px rgba(0, 0, 0, 0.3);
+} */

@@ -104,6 +104,7 @@ const $button2 = document.querySelector('.button2')
 
 $button.addEventListener('click', next)
 $button2.addEventListener('click', prev)
+ 
 
 window.addEventListener('DOMContentLoaded', () => {
     let pag = getPag()
