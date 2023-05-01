@@ -1,4 +1,6 @@
 const $container = document.querySelector('.cardsContainer')
+const $cards = document.getElementsByClassName('.countryCards')
+const $prevNext = document.querySelector('.pagination')
 
 window.addEventListener('load', () => {
     let cards = getCards()
@@ -14,9 +16,14 @@ window.addEventListener('load', () => {
     })
 })
 
+let api = {
+    main: "https://travel-site-a487e-default-rtdb.asia-southeast1.firebasedatabase.app"
+}
+
+
 async function getCards() {
     try {
-        const response = await fetch('https://travel-site-a487e-default-rtdb.asia-southeast1.firebasedatabase.app/cards.json')
+        const response = await fetch(`${api.main}/cards.json`)
 
         const cards = await response.json()
 
@@ -42,6 +49,7 @@ async function getCards() {
     }
 }
 
+
 function cardTemplate(travelCards) {
     const {
         country,
@@ -53,13 +61,43 @@ function cardTemplate(travelCards) {
     } = travelCards
 
     return `
-  <div class="countryCards" onClick="openInfoPage()" style="background: url(${img1})center/cover ">
-      <h2 class="countryName">${country}</h2>
+  <div class="countryCards" style="background: url(${img1})center/cover ">
+      <h2>${country}</h2>
 
-      <h3 class="countryName">${city}</h1>
+      <h3>${city}</h1>
+      <button class="InfoBtn" onClick="openInfoPage(${info})">Узнать больше</button>
   </div>
   `
 }
+function openInfoPage(info) {
+
+    slicedArr.style.display = 'none'
+    $prevNext.style.display = 'none'
+
+    const slicedArr = cardsArr.reverse().slice(off, pag)
+
+    slicedArr.forEach(travelCards => {
+        $container.insertAdjacentHTML('afterbegin', cardTemplate(travelCards))
+    })
+
+    return `
+        <div class="cardsContainer">
+          <div class="country_info"> 
+            <div class="left_side">
+              <h1>Имя: ${info.info}</h1> 
+            </div>
+            <div class="right_side">
+              <img src='${info.img2}'/> 
+            </div>
+          </div> 
+            <button class="InfoBtn" onClick="reloadWindowFunc()">Вернуться назад</button> 
+        </div>
+        `;
+
+
+
+}
+
 
 const $button = document.querySelector('.button')
 const $button2 = document.querySelector('.button2')
@@ -164,24 +202,24 @@ function reloadPage() {
 // --------------------------------------------------------------------
 
 function search() {
-   
+
     let searchValue = document.getElementById("searchInput").value.toLowerCase();
-  
-    let elements = document.getElementsByClassName(".countryCards");
-  
+
+    let elements = document.getElementsByTagName("*");
+
     for (let i = 0; i < elements.length; i++) {
-      let elementText = elements[i].textContent.toLowerCase();
-      if (elementText.indexOf(searchValue) === -1) {
-        elements[i].style.display = "none";
-      } else {
-        elements[i].style.display = "";
-        
-      }
+        let elementText = elements[i].textContent.toLowerCase();
+        if (elementText.indexOf(searchValue) === -1) {
+            elements[i].style.display = "none";
+        } else {
+            elements[i].style.display = "";
+
+        }
     }
-  }
-  
-  
-  let searchBtn = document.getElementById("searchBtn");
-  searchBtn.onclick = function() {
+}
+
+
+let searchBtn = document.getElementById("searchBtn");
+searchBtn.onclick = function () {
     search();
-  }
+}

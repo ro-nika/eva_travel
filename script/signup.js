@@ -5,6 +5,7 @@ const Sign_Up_Url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?k
 const $registerBtn = document.querySelector('.signup_btn')
 const $signUpEmail = document.querySelector('.signup_email_input')
 const $signUpPassword = document.querySelector('.signup_password_input')
+const $body = document.querySelector('body')
 
 function testTemplate() {
     return (
@@ -95,7 +96,8 @@ async function signUp(email, password) {
 
         const res = await response.json()
         if (response.ok) {
-            document.body.innerHTML = testTemplate()
+            $body.authME.style.display = 'flex'
+            $body.$container2.style.display ='none'
         } else {
             throw new Error(res.error.errors.at(0).message)
         }
@@ -138,5 +140,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
     if (localId) {
         window.open('../index.html')
+
     }
 })
