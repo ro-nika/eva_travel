@@ -12,12 +12,17 @@
 
 <body>
     <div class="header">
-        <video autoplay loop muted src="video/video-on-top.mp4" class="video"></video>
+        <video autoplay loop muted src="./video/background.mp4" class="video"></video>
         <div class="main_content">
 
             <div class="content_top">
                 <nav class="nav_bar">
+                    <div class="auth">
+                        <h5>My name</h5>
+                        <img id='pers' src="./img/profile.png" alt="">
 
+                        <div class="line"></div>
+                    </div>
                 </nav>
                 <div class="main_block">
                     <div class="main_top_block">
@@ -47,13 +52,7 @@
                         </div>
 
                         <div class="top_right">
-                            <div class="auth">
-                                <img id='comm' src="./img/comments.png" alt="">
-                                <h2>Me</h2>
-                                <img id='pers' src="./img/profile.png" alt="">
 
-                                <div class="line"></div>
-                            </div>
                             <div class="person">
 
                                 <ul>
@@ -92,24 +91,136 @@
                     <input type="text" id="searchInput" placeholder="Поиск...">
                     <button type="button" id="searchBtn">Найти</button>
 
+                    <div class="flights"><a href="#">Забронировать билеты = ></a></div>
+
                 </div>
 
             </div>
 
         </div>
-        <div class="cardsContainer"></div>
-        <div class="pagination">
-            <button class="button2">Prev</button>
-            <button class="button">Next</button>
+        <div class="cardsContainer">
+            <div class="pagination">
+                <button class="button2">Prev</button>
+                <button class="button">Next</button>
+            </div>
         </div>
 
         <div class="ifAuthTrue"></div>
 
-
     </div>
+    <footer>
+        <!--footer  -->
 
-    <script src="./script/index.js"></script>
-    <script src="./script/signin.js"></script>
+        <footer>
+            <div class="footerCards">
+                <!-- ----------------------------------------------------------------------        -->
+                <div class="informFooter">
+                    <div class="logo">
+                        <img src="/img elnura/logo3.png" alt="">
+                    </div>
+                    <div class="phone_call">
+                        <h2><img src="/img elnura/phone-call.png" alt=""> +996555040655</h2>
+                    </div>
+                </div>
+                <!-- ----------------------------------------------------------------- -->
+                <div class="company">
+                    <ul class="footer_menu">
+                        <li>
+                            <h4>О нас</h4>
+                        </li>
+                        <li>
+                            <a href="">Eva travel</a>
+                        </li>
+                        <li>
+                            <a href="">Благодарности</a>
+                        </li>
+                        <li>
+                            <a href="">Отзывы</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <!-- ----------------------------------------------------------------- -->
+                <div class="Country">
+                    <h4>Популярные направления</h4>
+                    <ul class="footer_menu_third">
+                        <li>
+                            <a href="">Австрия</a>
+                        </li>
+                        <li>
+                            <a href="">Беларусь</a>
+                        </li>
+                        <li>
+                            <a href="">Вьетнам</a>
+                        </li>
+                        <li>
+                            <a href="">Греция</a>
+                        </li>
+                        <li>
+                            <a href="">Дубай</a>
+                        </li>
+                        <li>
+                            <a href="">Египет</a>
+                        </li>
+                        <li>
+                            <a href="">Индия</a>
+                        </li>
+                        <li>
+                            <a href="">Индонезия</a>
+                        </li>
+                        <li>
+                            <a href="">Испания</a>
+                        </li>
+                        <li>
+                            <a href="">Катар</a>
+                        </li>
+                        <li>
+                            <a href="">Кипр</a>
+                        </li>
+                        <li>
+                            <a href="">Мальдивы</a>
+                        </li>
+                        <li>
+                            <a href="">Россия</a>
+                        </li>
+                        <li>
+                            <a href="">Турция</a>
+                        </li>
+                        <li>
+                            <a href="">Таиланд</a>
+                        </li>
+                        <li>
+                            <a href="">Сейшелы</a>
+                        </li>
+                        <li>
+                            <a href="">Стамбул</a>
+                        </li>
+                        <li>
+                            <a href="">Шри-Ланка</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- ------------------------------------------ -->
+                <div class="social">
+                    <h4>Подписаться</h4>
+                    <input type="email" placeholder="Ваш номер телефона">
+
+                    <div class="socialTwo">
+                        <a href="https://ru-ru.facebook.com/login/device-based/regular/login/?login_attempt=1"><img
+                                src="./img elnura/facebook.png" alt="facebook"></a>
+                        <a href="https://www.instagram.com/"><img src="./img elnura/instagram.png" alt="instagram"></a>
+                        <a href="https://wa.me/"><img src="./img elnura/whatsapp.png" alt="whatsapp"></a>
+                        <a href="https://web.telegram.org/k/"><img src="./img elnura/telegram.png" alt="telegram"></a>
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+
+        <script src="./script/index.js"></script>
+        <script src="./script/signin.js"></script>
 </body>
 
 

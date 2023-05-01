@@ -1,4 +1,6 @@
 const $container = document.querySelector('.cardsContainer')
+const $cards = document.getElementsByClassName('.countryCards')
+const $prevNext = document.querySelector('.pagination')
 
 window.addEventListener('load', () => {
     let cards = getCards()
@@ -14,9 +16,14 @@ window.addEventListener('load', () => {
     })
 })
 
+let api = {
+    main: "https://travel-site-a487e-default-rtdb.asia-southeast1.firebasedatabase.app"
+}
+
+
 async function getCards() {
     try {
-        const response = await fetch('https://travel-site-a487e-default-rtdb.asia-southeast1.firebasedatabase.app/cards.json')
+        const response = await fetch(`${api.main}/cards.json`)
 
         const cards = await response.json()
 
@@ -42,6 +49,7 @@ async function getCards() {
     }
 }
 
+
 function cardTemplate(travelCards) {
     const {
         country,
@@ -53,13 +61,43 @@ function cardTemplate(travelCards) {
     } = travelCards
 
     return `
-  <div class="countryCards" onClick="openInfoPage()" style="background: url(${img1})center/cover ">
+  <div class="countryCards" style="background: url(${img1})center/cover ">
       <h2>${country}</h2>
 
       <h3>${city}</h1>
+      <button class="InfoBtn" onClick="openInfoPage(${info})">Узнать больше</button>
   </div>
   `
 }
+function openInfoPage(info) {
+
+    slicedArr.style.display = 'none'
+    $prevNext.style.display = 'none'
+
+    const slicedArr = cardsArr.reverse().slice(off, pag)
+
+    slicedArr.forEach(travelCards => {
+        $container.insertAdjacentHTML('afterbegin', cardTemplate(travelCards))
+    })
+
+    return `
+        <div class="cardsContainer">
+          <div class="country_info"> 
+            <div class="left_side">
+              <h1>Имя: ${info.info}</h1> 
+            </div>
+            <div class="right_side">
+              <img src='${info.img2}'/> 
+            </div>
+          </div> 
+            <button class="InfoBtn" onClick="reloadWindowFunc()">Вернуться назад</button> 
+        </div>
+        `;
+
+
+
+}
+
 
 const $button = document.querySelector('.button')
 const $button2 = document.querySelector('.button2')
@@ -72,7 +110,7 @@ window.addEventListener('DOMContentLoaded', () => {
     let off = getOffset()
 
     if (pag === null || off === null) {
-        pag = 2
+        pag = 8
         off = 0
         setOffset(off)
         setPag(pag)
@@ -85,7 +123,7 @@ window.addEventListener('DOMContentLoaded', () => {
         $button2.disabled = true
     }
 
-    if (pag == 6) {
+    if (pag == 40) {
         $button.style.cursor = 'default'
         $button.style.background = 'grey'
         $button.disabled = true
@@ -100,12 +138,12 @@ function next() {
     let pag = +getPag()
     let off = +getOffset()
 
-    if (pag >= 6 || pag <= 0) {
-        pag = 2
+    if (pag >= 40 || pag <= 0) {
+        pag = 8
         off = 0
     } else {
-        pag += 2
-        off += 2
+        pag += 8
+        off += 8
     }
 
     console.log(off);
@@ -121,11 +159,11 @@ function prev() {
     let off = +getOffset()
 
     if (off <= 0 || pag <= 0) {
-        pag = 2
+        pag = 8
         off = 0
     } else {
-        pag -= 2
-        off -= 2
+        pag -= 8
+        off -= 8
 
     }
 
@@ -161,27 +199,27 @@ function reloadPage() {
     window.location.reload()
 }
 
-// -----------------------------------------
+// --------------------------------------------------------------------
 
 function search() {
-   
+
     let searchValue = document.getElementById("searchInput").value.toLowerCase();
-  
+
     let elements = document.getElementsByTagName("*");
-  
+
     for (let i = 0; i < elements.length; i++) {
-      let elementText = elements[i].textContent.toLowerCase();
-      if (elementText.indexOf(searchValue) === -1) {
-        elements[i].style.display = "none";
-      } else {
-        elements[i].style.display = "";
-      }
+        let elementText = elements[i].textContent.toLowerCase();
+        if (elementText.indexOf(searchValue) === -1) {
+            elements[i].style.display = "none";
+        } else {
+            elements[i].style.display = "";
+
+        }
     }
-  }
-  
-  
-  let searchBtn = document.getElementById("searchBtn");
-  searchBtn.onclick = function() {
+}
+
+
+let searchBtn = document.getElementById("searchBtn");
+searchBtn.onclick = function () {
     search();
-  }
-  
+}
